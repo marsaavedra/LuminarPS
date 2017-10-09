@@ -42,7 +42,7 @@ body{
 
 
 
-#welcomeSign, #userguidediv {
+#welcomeSign {
   max-width: 300px;
   height: auto;
   margin: 0 auto 0 auto;
@@ -71,7 +71,7 @@ body{
 
 .wrapper {
   margin: 0 auto 0 auto;
-  max-width: 800px;
+  max-width: 900px;
   height: auto;
 }
 .wrapper1 {

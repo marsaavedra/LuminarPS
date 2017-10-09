@@ -6,20 +6,20 @@ module.exports = function(app){
  	app.get('/', function(req, res){
  		// Only autenticated user can access this page
  		// If user is not autenticated, redirect to login
-		if(req.isAuthenticated()){
- 			res.sendFile(path.join(__dirname, "../private/dashboard.html"));
- 		} else {
- 			res.redirect('/login');
- 		}
+		// if(req.isAuthenticated()){
+ 			res.sendFile(path.join(__dirname, "../public/index.html"));
+ 		// } else {
+ 		// 	res.redirect('/login');
+ 		// }
  	});
 
- 	// Get routes for home
-	app.get('/login', function(req, res){
- 		res.sendFile(path.join(__dirname, "../public/index.html"));
+ 	// Get routes for dashboard
+	app.get('/dashboard', function(req, res){
+ 		res.sendFile(path.join(__dirname, "../private/dashboard.html"));
  	});
 
- 	app.get('/login', function(req, res){
- 		res.sendFile(path.join(__dirname, "../public/index.html"));
- 	});
+ 	// app.get('/login', function(req, res){
+ 	// 	res.sendFile(path.join(__dirname, "../public/index.html"));
+ 	// });
 
-}
+};

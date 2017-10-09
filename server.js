@@ -18,10 +18,12 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(__dirname + '/public'));
 
 //Routes
-require("./routes/user-api-routes.js")(app, passport);
+require("./routes/html-routes.js")(app);
+// (app, passport);
 
 //Sync Database
 db.sequelize.sync({/*force: true*/}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT" + PORT);
   });
+});
