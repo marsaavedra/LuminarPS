@@ -1,13 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true
-      }
-    },
-     name: {
+  var user = sequelize.define("user", {
+     username: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -20,14 +13,14 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [6,100]
       }
-    }
+    },
+    status: {
+      type: DataTypes.ENUM('active', 'inactive'),
+      defaultValue: 'active'
+      }
   });
 
-   // User.associate = function(models) {
-    //  User.hasMany(models.Snips, {
-    //    onDelete: "cascade"
-    //  });
-    // };
+   
 
-  return User;
+  return user;
 };

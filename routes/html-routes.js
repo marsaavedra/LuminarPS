@@ -18,6 +18,14 @@ module.exports = function(app){
  		res.sendFile(path.join(__dirname, "../private/dashboard.html"));
  	});
 
+ 	app.get('/help', function(req, res){
+ 		res.sendFile(path.join(__dirname, "../private/help.html"));
+ 	});
+
+
+ 	app.get('/usermanual', function(req, res){
+ 		res.sendFile(path.join(__dirname, "../private/usermanual.html"));
+ 	});
  	// app.get('/login', function(req, res){
  	// 	res.sendFile(path.join(__dirname, "../public/index.html"));
  	// });

@@ -32,12 +32,12 @@ module.exports = function(passport, user){
 	passport.use('login', new LocalStrategy(
 		// Set what request fields our usernameField and passwordField are.
 		{
-			usernameField: 'email',
+			usernameField: 'username',
 			passwordField: 'password',
 			passReqToCallback: true
 		},
 
-		function(req, email, password, done){
+		function(req, username, password, done){
 			var User = user;
 
 			// Function to compare password entered with the one in database
@@ -48,13 +48,13 @@ module.exports = function(passport, user){
 			// Check if the emial exist in the database
 			User.findOne({
 				where: {
-					email: email
+					username: username
 				}
 			}).then(function(user){
 
 				if(!user) {
 					// If user does not exist
-					return done(null, false, "Email does not exist.");
+					return done(null, false, "Username does not exist.");
 				}
 				// Validate password
 				if(!isValidPassword(user.password, password)){
