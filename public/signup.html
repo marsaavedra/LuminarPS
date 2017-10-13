@@ -44,23 +44,25 @@
           <div class="col" id="signinDiv"> 
           
 
-              <h2>Log In</h2>
-              <form id="signinForm">
-                  <div class="form-group">
-                     
-                      <input type="email" id="signInEmail" name="signInEmail" class="form-control" placeholder="Email address"  autofocus>
-                  </div>
+              <h2>Sign up</h2>
+              <form action="" method="post" id="signupForm">
 
-                  <div class="form-group">
-                     
-                      <input type="password" id="signInPassword" name="signInPassword" class="form-control" placeholder="Password" >
-                  </div>
+                <div class="form-group">
+                  <label for="email">Username</label>
+                  <input class="form-control" type="username" name="username" id="username" placeholder="yourname@example.com">
+                </div>
 
-                  <a class="btn btn-default btn-primary btn-block" href="/dashboard">Login</a>
+                <div class="form-group ">
+                  <label for="password">Password</label>
+                  <input class="form-control" type="password" name="password" id="password" placeholder="At least 6 characters">
+                </div>
+                 <div class="form-group ">
+                  <label for="confirm-password">Confirm password</label>
+                  <input class="form-control" type="password" name="confirmPassword" id="confirmPassword">
+              </div>
 
-              </form>
-              <br>
-                <a href="/signup"> Sign up</a> 
+              <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
+          </form>
 
           </div>    
 
